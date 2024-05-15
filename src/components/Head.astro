@@ -17,6 +17,11 @@ export interface Props {
    */
   charset?: string;
 
+  /**
+   * The language of the document.
+   */
+  lang?: string;
+
   description?: string;
   image?: string;
 
@@ -46,6 +51,7 @@ export interface Props {
 const {
   type = "website",
   charset = "utf-8",
+  lang,
   title,
   description,
   image,
@@ -70,6 +76,7 @@ const url = `${import.meta.env.SITE}${path}`;
 
 <meta charset={charset} />
 <meta property="og:type" content={type} />
+{lang && <meta property="og:locale" content={lang} />}
 <meta name="twitter:card" content="summary" />
 {siteName && <meta property="og:site_name" content={siteName} />}
 {
@@ -116,10 +123,13 @@ const url = `${import.meta.env.SITE}${path}`;
 }
 {
   alternates?.map((alternate) => (
-    <link
-      rel="alternate"
-      hreflang={alternate.lang}
-      href={import.meta.env.SITE + alternate.path}
-    />
+    <>
+      <link
+        rel="alternate"
+        hreflang={alternate.lang}
+        href={import.meta.env.SITE + alternate.path}
+      />
+      <meta property="og:locale:alternate" content={alternate.lang} />
+    </>
   ))
 }
