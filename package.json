@@ -1,0 +1,25 @@
+{
+  "name": "@zfben/astro-head",
+  "description": "Astro Head component",
+  "version": "1.0.0",
+  "license": "MIT",
+  "exports": "./src/index.ts",
+  "homepage": "https://github.com/zfben/astro-head",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfben/astro-head.git",
+    "directory": "packages/ant-design"
+  },
+  "bugs": {
+    "url": "https://github.com/zfben/astro-head/issues"
+  },
+  "scripts": {
+    "build": "tsup-node src/index.ts --config ../../tsup.config.json"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "astro": "*"
+  }
+}

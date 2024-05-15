@@ -1,0 +1,95 @@
+---
+interface Props {
+  type?: string;
+  title: string;
+  charset?: string;
+  description?: string;
+  image?: string;
+  siteName?: string;
+  path: string;
+  author?: string;
+  twitter?: string;
+  alternates?: {
+    lang: string;
+    path: string;
+  }[];
+}
+
+const {
+  type = "website",
+  charset = "utf-8",
+  title,
+  description,
+  image,
+  siteName,
+  path,
+  author,
+  twitter,
+  alternates,
+} = Astro.props;
+
+if (!import.meta.env.SITE)
+  throw new Error("Please set `site` in your Astro config file.");
+
+if (!path) throw new Error("Please provide a `path` prop.");
+
+if (!title) throw new Error("Please provide a `title` prop.");
+
+const url = `${import.meta.env.SITE}${path}`;
+---
+
+<meta charset={charset} />
+<meta property="og:type" content={type} />
+<meta name="twitter:card" content="summary" />
+{siteName && <meta property="og:site_name" content={siteName} />}
+{
+  twitter && (
+    <>
+      <meta name="twitter:site" content={twitter} />
+      <meta name="twitter:creator" content={twitter} />
+    </>
+  )
+}
+<title>{title}</title>
+<meta property="title" content={title} />
+<meta property="og:title" content={title} />
+<meta name="twitter:title" content={title} />
+{
+  description && (
+    <>
+      <meta name="description" content={description} />
+      <meta property="og:description" content={description} />
+      <meta property="twitter:description" content={description} />
+    </>
+  )
+}
+{
+  image && (
+    <>
+      <meta property="image" content={image} />
+      <meta property="og:image" content={image} />
+      <meta name="twitter:image" content={image} />
+    </>
+  )
+}
+<link rel="canonical" href={url} />
+<meta property="url" content={url} />
+<meta property="og:url" content={url} />
+<meta name="twitter:url" content={url} />
+{
+  author && (
+    <>
+      <meta name="author" content={author} />
+      <meta property="article:author" content={author} />
+    </>
+  )
+}
+{
+  alternates?.map((alternate) => (
+    <link
+      rel="alternate"
+      hreflang={alternate.lang}
+      href={import.meta.env.SITE + alternate.path}
+    />
+  ))
+}
