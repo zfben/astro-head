@@ -1,7 +1,7 @@
 {
   "name": "@zfben/astro-head",
   "description": "Managing SEO for your Astro website just got easier with @zfben/astro-head. This package simplifies the process of adding essential meta tags and open graph/twitter meta data to your Astro components, boosting your website's search engine visibility.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "exports": "./src/index.ts",
   "homepage": "https://github.com/zfben/astro-head",

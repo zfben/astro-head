@@ -31,3 +31,7 @@ import { Head } from "@zfben/astro-head";
   </head>
 </html>
 ```
+
+## Links
+
+- [Changelog](./CHANGELOG.md)
