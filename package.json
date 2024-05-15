@@ -1,20 +1,16 @@
 {
   "name": "@zfben/astro-head",
-  "description": "Astro Head component",
-  "version": "1.0.0",
+  "description": "Managing SEO for your Astro website just got easier with @zfben/astro-head. This package simplifies the process of adding essential meta tags and open graph/twitter meta data to your Astro components, boosting your website's search engine visibility.",
+  "version": "1.1.0",
   "license": "MIT",
   "exports": "./src/index.ts",
   "homepage": "https://github.com/zfben/astro-head",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zfben/astro-head.git",
-    "directory": "packages/ant-design"
+    "url": "git+https://github.com/zfben/astro-head.git"
   },
   "bugs": {
     "url": "https://github.com/zfben/astro-head/issues"
-  },
-  "scripts": {
-    "build": "tsup-node src/index.ts --config ../../tsup.config.json"
   },
   "files": [
     "src"

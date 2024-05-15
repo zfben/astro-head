@@ -1,14 +1,42 @@
 ---
-interface Props {
-  type?: string;
+/**
+ * Head component's props.
+ */
+export interface Props {
   title: string;
+  path: string;
+
+  /**
+   * The type of the content. Default is `website`.
+   *
+   * @see https://ogp.me/#types
+   */
+  type?: string;
+  /**
+   * The character set of the document. Default is `utf-8`.
+   */
   charset?: string;
+
   description?: string;
   image?: string;
+
+  /**
+   * The name of the website.
+   */
   siteName?: string;
-  path: string;
+
+  /**
+   * The author's name of the document.
+   */
   author?: string;
+  /**
+   * Twitter username, like `@zfben`.
+   */
   twitter?: string;
+
+  /**
+   * An array of alternate languages.
+   */
   alternates?: {
     lang: string;
     path: string;
@@ -29,11 +57,13 @@ const {
 } = Astro.props;
 
 if (!import.meta.env.SITE)
-  throw new Error("Please set `site` in your Astro config file.");
+  throw Error("Please set `site` in your Astro config file.");
 
-if (!path) throw new Error("Please provide a `path` prop.");
+if (!path) throw Error("Please provide a `path` prop.");
 
-if (!title) throw new Error("Please provide a `title` prop.");
+if (!title) throw Error("Please provide a `title` prop.");
+
+if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
 const url = `${import.meta.env.SITE}${path}`;
 ---
