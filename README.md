@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/npm/l/@zfben/astro-head.svg)](https://github.com/zfben/astro-head/blob/main/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/@zfben/astro-head.svg)](https://www.npmjs.com/package/@zfben/astro-head)
 
-Managing SEO for your Astro website just got easier with @zfben/astro-head. This package simplifies the process of adding essential meta tags and open graph/twitter meta data to your Astro components, boosting your website's search engine visibility.
+Managing SEO for your [Astro](https://astro.build/) website just got easier with [@zfben/astro-head](https://www.npmjs.com/package/@zfben/astro-head). This package simplifies the process of adding essential meta tags and [open graph](https://ogp.me/)/[twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started) meta data to your Astro components, boosting your website's search engine visibility.
 
 ## Key Features
 
@@ -32,9 +32,9 @@ import { Head } from "@zfben/astro-head";
 </html>
 ```
 
-## Supported Meta
+## Supported Props
 
-Input | Output | Format
+Prop | Output | Format
 -- | -- | --
 `title` | `title`, `og:title`, `twitter:title` | string, **required**
 `path` | `canonical`, `url`, `og:url`, `twitter:url` | string, **required**, must be started with `/`
