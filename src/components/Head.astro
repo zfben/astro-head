@@ -71,6 +71,9 @@ if (!title) throw Error("Please provide a `title` prop.");
 
 if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
+if (twitter && !twitter.startsWith("@"))
+  throw Error("`twitter` must start with a `@`.");
+
 const url = `${import.meta.env.SITE}${path}`;
 ---
 

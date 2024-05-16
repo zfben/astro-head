@@ -32,6 +32,22 @@ import { Head } from "@zfben/astro-head";
 </html>
 ```
 
+## Supported Meta
+
+Input | Output | Format
+-- | -- | --
+`title` | `title`, `og:title`, `twitter:title` | string, **required**
+`path` | `canonical`, `url`, `og:url`, `twitter:url` | string, **required**, must be started with `/`
+`type` | `og:type` | string, default is `website`
+`charset` | `charset` | string, default is `utf-8`
+`lang` | `og:locale` | string
+`description` | `description`, `og:description`, `twitter:description` | string
+`image` | `image`, `og:image`, `twitter:image` | string
+`siteName`| `og:site_name` | string
+`author` | `author`, `article:author` | string
+`twitter` | `twitter:site`, `twitter:creator` | string, must be started with `@`
+`alternates` | `alternate`, `og:locale:alternate` | `lang` and `path` list
+
 ## Links
 
 - [Changelog](./CHANGELOG.md)
