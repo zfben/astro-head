@@ -1,6 +1,6 @@
 # Effortless SEO for Astro with @zfben/astro-head
 
-[![License: MIT](https://img.shields.io/npm/l/zfben.svg)](https://github.com/zfben/astro-head/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@zfben/astro-head.svg)](https://github.com/zfben/astro-head/blob/main/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/@zfben/astro-head.svg)](https://www.npmjs.com/package/@zfben/astro-head)
 
 Managing SEO for your Astro website just got easier with @zfben/astro-head. This package simplifies the process of adding essential meta tags and open graph/twitter meta data to your Astro components, boosting your website's search engine visibility.
