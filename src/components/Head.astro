@@ -4,7 +4,7 @@
  */
 export interface Props {
   title: string;
-  path: string;
+  path: `/${string}`;
 
   /**
    * The type of the content. Default is `website`.
@@ -23,7 +23,7 @@ export interface Props {
   lang?: string;
 
   description?: string;
-  image?: string;
+  image?: `http${string}`;
 
   /**
    * The name of the website.
@@ -37,7 +37,7 @@ export interface Props {
   /**
    * Twitter username, like `@zfben`.
    */
-  twitter?: string;
+  twitter?: `@${string}`;
 
   /**
    * An array of alternate languages.
@@ -46,6 +46,11 @@ export interface Props {
     lang: string;
     path: string;
   }[];
+
+  /**
+   * Google Analytics ID, like `G-123456789`.
+   */
+  ga?: `G-${string}`;
 }
 
 const {
@@ -60,6 +65,7 @@ const {
   author,
   twitter,
   alternates,
+  ga,
 } = Astro.props;
 
 if (!import.meta.env.SITE)
@@ -71,12 +77,20 @@ if (!title) throw Error("Please provide a `title` prop.");
 
 if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
+if (image && !image.startsWith("http"))
+  throw Error("`image` must start with `http`.");
+
 if (twitter && !twitter.startsWith("@"))
   throw Error("`twitter` must start with a `@`.");
 
 const url = `${import.meta.env.SITE}${path}`;
 ---
 
+{ga && (<script
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
+  is:inline></script>
+<script is:inline define:vars={{ga}}>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",ga);</script>)}
 <meta charset={charset} />
 <meta property="og:type" content={type} />
 {lang && <meta property="og:locale" content={lang} />}
@@ -99,7 +113,7 @@ const url = `${import.meta.env.SITE}${path}`;
     <>
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />
-      <meta property="twitter:description" content={description} />
+      <meta name="twitter:description" content={description} />
     </>
   )
 }

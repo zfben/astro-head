@@ -47,6 +47,7 @@ Prop | Output | Format
 `author` | `author`, `article:author` | string
 `twitter` | `twitter:site`, `twitter:creator` | string, must be started with `@`
 `alternates` | `alternate`, `og:locale:alternate` | `lang` and `path` list
+`ga` | Google Analytics' tracking code | string, must be started with `G-`
 
 ## Links
 

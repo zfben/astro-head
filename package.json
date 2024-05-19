@@ -13,8 +13,12 @@
     "url": "https://github.com/zfben/astro-head/issues"
   },
   "files": [
-    "src"
+    "src/components",
+    "src/index.ts"
   ],
+  "scripts": {
+    "test": "node cases.mjs"
+  },
   "devDependencies": {
     "astro": "*"
   }
