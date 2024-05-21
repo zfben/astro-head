@@ -4,7 +4,10 @@
  */
 export interface Props {
   title: string;
-  path: `/${string}`;
+  /**
+   * The path of the page. Should start and end with `/`.
+   */
+  path: '/' | `/${string}/`;
 
   /**
    * The type of the content. Default is `website`.
