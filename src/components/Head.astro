@@ -51,9 +51,14 @@ export interface Props {
   }[];
 
   /**
-   * Google Analytics ID, like `G-123456789`.
+   * [Google Analytics](https://analytics.google.com/) ID, like `G-123456789`.
    */
   ga?: `G-${string}`;
+
+  /**
+   * [Clarity](https://clarity.microsoft.com/) ID.
+   */
+  clarity?: string;
 }
 
 const {
@@ -69,6 +74,7 @@ const {
   twitter,
   alternates,
   ga,
+  clarity,
 } = Astro.props;
 
 if (!import.meta.env.SITE)
@@ -93,7 +99,9 @@ const url = `${import.meta.env.SITE}${path}`;
   async
   src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
   is:inline></script>
-<script is:inline define:vars={{ga}}>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",ga);</script>)}
+<script is:inline define:vars={{ga}}>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",ga);</script>)}
+{clarity && (<script
+  is:inline define:vars={{clarity}}>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",clarity);</script>)}
 <meta charset={charset} />
 <meta property="og:type" content={type} />
 {lang && <meta property="og:locale" content={lang} />}

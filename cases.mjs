@@ -58,5 +58,8 @@ test('check props', () => {
   ok(content.includes('<meta property="og:locale:alternate" content="fr">'))
 
   // ga
-  ok(content.includes('<script async src="https://www.googletagmanager.com/gtag/js?id=G-test"></script>\n<script>(function(){const ga = "G-test";\nwindow.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",ga);})();</script>'))
+  ok(content.includes('<script async src="https://www.googletagmanager.com/gtag/js?id=G-test"></script>\n<script>(function(){const ga = "G-test";\nwindow.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",ga);})();</script>'))
+
+  // clarity
+  ok(content.includes('<script>(function(){const clarity = "clarityId";\n(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",clarity);})();</script>'))
 })
