@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.4.0 (2024-05-28)`](https://github.com/zfben/astro-head/compare/v1.3.1...v1.4.0)
+
+- [Feature] Support Clarity.
+
 ## [`v1.3.1 (2024-05-19)`](https://github.com/zfben/astro-head/compare/v1.3.0...v1.3.1)
 
 - [Fix] `path` should end with `/`.
