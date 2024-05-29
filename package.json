@@ -33,6 +33,10 @@
     "src/components",
     "src/index.ts"
   ],
+  "scripts": {
+    "dev": "astro dev",
+    "test": "node cases.mjs"
+  },
   "devDependencies": {
     "astro": "*"
   }
