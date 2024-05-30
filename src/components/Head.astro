@@ -43,6 +43,15 @@ export interface Props {
   twitter?: `@${string}`;
 
   /**
+   * The type of the Twitter card.
+   *
+   * @default "summary"
+   *
+   * @see https://developer.x.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
+   */
+  twitterCard?: "summary" | "summary_large_image" | "app" | "player";
+
+  /**
    * An array of alternate languages.
    */
   alternates?: {
@@ -72,6 +81,7 @@ const {
   path,
   author,
   twitter,
+  twitterCard = "summary",
   alternates,
   ga,
   clarity,
@@ -111,7 +121,7 @@ const url = `${import.meta.env.SITE}${path}`;
 <meta charset={charset} />
 <meta property="og:type" content={type} />
 {lang && <meta property="og:locale" content={lang} />}
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content={twitterCard} />
 {siteName && <meta property="og:site_name" content={siteName} />}
 {
   twitter && (
