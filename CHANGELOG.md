@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.6.0 (2024-05-30)`](https://github.com/zfben/astro-head/compare/v1.5.0...v1.6.0)
+
+- [Feature] Add `twitterCard`, default is `summary`.
+
 ## [`v1.5.0 (2024-05-29)`](https://github.com/zfben/astro-head/compare/v1.4.0...v1.5.0)
 
 - [Feature] Disable to generate tracking code in development mode.
