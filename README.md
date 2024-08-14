@@ -50,6 +50,7 @@ Prop | Output | Format
 `alternates` | `alternate`, `og:locale:alternate` | `lang` and `path` list
 `ga` | Google Analytics' tracking code | string, must be started with `G-`
 `clarity` | Clarity's tracking code | string
+`scp` | Content Security Policy | string, default is `default-src 'self'; img-src https://*; child-src 'none';`
 
 ## Links
 

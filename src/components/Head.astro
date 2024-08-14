@@ -68,6 +68,13 @@ export interface Props {
    * [Clarity](https://clarity.microsoft.com/) ID.
    */
   clarity?: string;
+
+  /**
+   * The [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) of the document.
+   *
+   * @default `default-src 'self'; img-src https://*; child-src 'none';`
+   */
+  scp?: string;
 }
 
 const {
@@ -85,6 +92,7 @@ const {
   alternates,
   ga,
   clarity,
+  scp,
 } = Astro.props;
 
 if (!import.meta.env.SITE)
@@ -135,6 +143,7 @@ const url = `${import.meta.env.SITE}${path}`;
 <meta property="title" content={title} />
 <meta property="og:title" content={title} />
 <meta name="twitter:title" content={title} />
+<meta http-equiv="Content-Security-Policy" content={scp || "default-src 'self'; img-src https://*; child-src 'none';"} />
 {
   description && (
     <>
