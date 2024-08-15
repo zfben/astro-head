@@ -19,7 +19,7 @@
     "sharing",
     "analytics"
   ],
-  "version": "1.7.0",
+  "version": "1.7.1",
   "license": "MIT",
   "exports": "./src/index.ts",
   "homepage": "https://github.com/zfben/astro-head",
@@ -34,6 +34,7 @@
     "src"
   ],
   "scripts": {
+    "build": "astro build",
     "test": "node cases.mjs"
   },
   "devDependencies": {

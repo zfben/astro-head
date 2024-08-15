@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.7.1 (2024-08-15)`](https://github.com/zfben/astro-head/compare/v1.7.0...v1.7.1)
+
+- [Fix] Remove `scp` default value.
+
 ## [`v1.7.0 (2024-08-14)`](https://github.com/zfben/astro-head/compare/v1.6.0...v1.7.0)
 
 - [Feature] Add `scp`, default is `default-src 'self'; img-src https://*; child-src 'none';`.

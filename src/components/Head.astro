@@ -71,8 +71,6 @@ export interface Props {
 
   /**
    * The [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) of the document.
-   *
-   * @default `default-src 'self'; img-src https://*; child-src 'none';`
    */
   scp?: string;
 }
@@ -143,7 +141,6 @@ const url = `${import.meta.env.SITE}${path}`;
 <meta property="title" content={title} />
 <meta property="og:title" content={title} />
 <meta name="twitter:title" content={title} />
-<meta http-equiv="Content-Security-Policy" content={scp || "default-src 'self'; img-src https://*; child-src 'none';"} />
 {
   description && (
     <>
@@ -186,3 +183,4 @@ const url = `${import.meta.env.SITE}${path}`;
     </>
   ))
 }
+{scp && <meta http-equiv="Content-Security-Policy" content={scp} />}
