@@ -47,7 +47,7 @@ Prop | Output | Format
 `author` | `author`, `article:author` | string
 `twitter` | `twitter:site`, `twitter:creator` | string, must be started with `@`
 `twitterCard` | `twitter:card` | string, one of `summary` | `summary_large_image` | `app` | `player`, default is `summary`
-`alternates` | `alternate`, `og:locale:alternate` | `lang` and `path` list
+`alternates` | `alternate`, `og:locale:alternate` | `lang`, `path` and `default` list
 `ga` | Google Analytics' tracking code | string, must be started with `G-`
 `clarity` | Clarity's tracking code | string
 `scp` | Content Security Policy | string, default is `default-src 'self'; img-src https://*; child-src 'none';`

@@ -53,10 +53,18 @@ export interface Props {
 
   /**
    * An array of alternate languages.
+   *
+   * @example
+   * ```ts
+   * alternates: [
+   *   { lang: "en", path: "/en/", default: true },
+   *   { lang: "zh", path: "/zh/" },
+   * ]
    */
   alternates?: {
     lang: string;
     path: string;
+    default?: boolean;
   }[];
 
   /**
@@ -112,6 +120,13 @@ if (!import.meta.env.PROD) {
   if (ga) console.warn("Google Analytics tracking code will only be generated in production mode.");
 
   if (clarity) console.warn("Clarity tracking code will only be generated in production mode.");
+}
+
+if (alternates?.length) {
+  if (!lang) throw Error("Please provide a `lang` prop when `alternates` is provided.");
+
+  if (!alternates.find((alternate) => alternate.default))
+    console.warn("Please provide a default alternate language.");
 }
 
 const url = `${import.meta.env.SITE}${path}`;
@@ -180,6 +195,7 @@ const url = `${import.meta.env.SITE}${path}`;
         href={import.meta.env.SITE + alternate.path}
       />
       <meta property="og:locale:alternate" content={alternate.lang} />
+      {alternate.default && <link rel="alternate" href={import.meta.env.SITE + alternate.path} hreflang="x-default" />}
     </>
   ))
 }
