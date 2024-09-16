@@ -2,7 +2,7 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
-## [`v1.8.0 (2024-08-15)`](https://github.com/zfben/astro-head/compare/v1.7.1...v1.8.0)
+## [`v1.8.1 (2024-09-16)`](https://github.com/zfben/astro-head/compare/v1.7.1...v1.8.1)
 
 - [Feature] Add `default` to `alternates`.
 
