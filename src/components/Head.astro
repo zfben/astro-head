@@ -60,11 +60,18 @@ export interface Props {
    *   { lang: "en", path: "/en/", default: true },
    *   { lang: "zh", path: "/zh/" },
    * ]
+   *
+   * // or
+   * alternates: [
+   *   { lang: "en", path: "/en/", default: "/choose-language/" },
+   *   { lang: "zh", path: "/zh/" },
+   * ]
+   * ```
    */
   alternates?: {
     lang: string;
     path: string;
-    default?: boolean;
+    default?: true | string;
   }[];
 
   /**
@@ -195,7 +202,7 @@ const url = `${import.meta.env.SITE}${path}`;
         href={import.meta.env.SITE + alternate.path}
       />
       <meta property="og:locale:alternate" content={alternate.lang} />
-      {alternate.default && <link rel="alternate" href={import.meta.env.SITE + alternate.path} hreflang="x-default" />}
+      {alternate.default && <link rel="alternate" href={import.meta.env.SITE + (alternate.default === true ? alternate.path : alternate.default)} hreflang="x-default" />}
     </>
   ))
 }

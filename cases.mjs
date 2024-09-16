@@ -53,6 +53,7 @@ test('check props', () => {
 
   // alternates
   ok(content.includes('<link rel="alternate" hreflang="en" href="https://zfben.com/en">'))
+  ok(content.includes('<link rel="alternate" href="https://zfben.com/en" hreflang="x-default">'))
   ok(content.includes('<link rel="alternate" hreflang="fr" href="https://zfben.com/fr">'))
   ok(content.includes('<meta property="og:locale:alternate" content="en">'))
   ok(content.includes('<meta property="og:locale:alternate" content="fr">'))
