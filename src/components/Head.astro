@@ -115,6 +115,11 @@ if (!path) throw Error("Please provide a `path` prop.");
 
 if (!title) throw Error("Please provide a `title` prop.");
 
+if (title.length > 60) console.debug("The `title` should be less than 60 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
+
+if (!description) console.debug("Provide a `description` prop for better SEO.");
+else if (description.length < 100) console.debug("The `description` should be at least 100 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
+
 if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
 if (image && !image.startsWith("http"))
@@ -124,16 +129,16 @@ if (twitter && !twitter.startsWith("@"))
   throw Error("`twitter` must start with a `@`.");
 
 if (!import.meta.env.PROD) {
-  if (ga) console.warn("Google Analytics tracking code will only be generated in production mode.");
+  if (ga) console.debug("Google Analytics tracking code will only be generated in production mode.");
 
-  if (clarity) console.warn("Clarity tracking code will only be generated in production mode.");
+  if (clarity) console.debug("Clarity tracking code will only be generated in production mode.");
 }
 
 if (alternates?.length) {
   if (!lang) throw Error("Please provide a `lang` prop when `alternates` is provided.");
 
   if (!alternates.find((alternate) => alternate.default))
-    console.warn("Please provide a default alternate language.");
+    console.debug("Please provide a default alternate language.");
 }
 
 const url = `${import.meta.env.SITE}${path}`;
