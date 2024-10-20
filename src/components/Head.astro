@@ -150,8 +150,6 @@ if (alternates?.length) {
 }
 
 const url = `${import.meta.env.SITE}${path}`;
-
-const canonicalUrl = `${import.meta.env.SITE}${alternates?.find(alternate => alternate.default)?.path || url}`;
 ---
 
 {import.meta.env.PROD && ga && (<script
@@ -196,7 +194,7 @@ const canonicalUrl = `${import.meta.env.SITE}${alternates?.find(alternate => alt
     </>
   )
 }
-<link rel="canonical" href={canonicalUrl} />
+<link rel="canonical" href={url} />
 <meta property="url" content={url} />
 <meta property="og:url" content={url} />
 <meta name="twitter:url" content={url} />
