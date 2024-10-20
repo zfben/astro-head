@@ -88,6 +88,13 @@ export interface Props {
    * The [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) of the document.
    */
   scp?: string;
+
+  /**
+   * Disable SEO advices.
+   *
+   * @default false
+   */
+  disableSEO?: boolean;
 }
 
 const {
@@ -106,6 +113,7 @@ const {
   ga,
   clarity,
   scp,
+  disableSEO,
 } = Astro.props;
 
 if (!import.meta.env.SITE)
@@ -115,10 +123,10 @@ if (!path) throw Error("Please provide a `path` prop.");
 
 if (!title) throw Error("Please provide a `title` prop.");
 
-if (title.length > 60) console.debug("The `title` should be less than 60 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
+if (!disableSEO && title.length > 60) console.debug("The `title` should be less than 60 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
 
-if (!description) console.debug("Provide a `description` prop for better SEO.");
-else if (description.length < 100) console.debug("The `description` should be at least 100 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
+if (!disableSEO && !description) console.debug("Provide a `description` prop for better SEO.");
+else if (!disableSEO && description && description.length < 100) console.debug("The `description` should be at least 100 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
 
 if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
@@ -137,7 +145,7 @@ if (!import.meta.env.PROD) {
 if (alternates?.length) {
   if (!lang) throw Error("Please provide a `lang` prop when `alternates` is provided.");
 
-  if (!alternates.find((alternate) => alternate.default))
+  if (!disableSEO && !alternates.find((alternate) => alternate.default))
     console.debug("Please provide a default alternate language.");
 }
 

@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.10.0 (2024-10-20)`](https://github.com/zfben/astro-head/compare/v1.9.1...v1.10.0)
+
+- [Feature] Add `disableSEO` to disable SEO advices in log output.
+
 ## [`v1.9.1 (2024-10-20)`](https://github.com/zfben/astro-head/compare/v1.8.1...v1.9.1)
 
 - [Feature] Enhance SEO guidance in Head component with debug messages for title and description length.

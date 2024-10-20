@@ -10,6 +10,7 @@ Managing SEO for your [Astro](https://astro.build/) website just got easier with
 - **Simplified Integration**: Seamlessly integrate SEO elements directly within your Astro components. No complex configurations needed!
 - **Automated Meta Generation**: Automatically generate open graph and twitter meta tags, saving you time and ensuring consistent data across your site.
 - **Leverages Astro Configuration**: Utilizes your existing site settings in astro.config.js to automatically generate accurate URLs within meta tags.
+- **SEO Best Practices**: Follows SEO best practices to ensure your website is optimized for search engines.
 
 ## Getting Started
 
@@ -34,23 +35,24 @@ import { Head } from "@zfben/astro-head";
 
 ## Supported Props
 
-Prop | Output | Format
--- | -- | --
-`title` | `title`, `og:title`, `twitter:title` | string, **required**
-`path` | `canonical`, `url`, `og:url`, `twitter:url` | string, **required**, must be started with `/`
-`type` | `og:type` | string, default is `website`
-`charset` | `charset` | string, default is `utf-8`
-`lang` | `og:locale` | string
-`description` | `description`, `og:description`, `twitter:description` | string
-`image` | `image`, `og:image`, `twitter:image` | string
-`siteName`| `og:site_name` | string
-`author` | `author`, `article:author` | string
-`twitter` | `twitter:site`, `twitter:creator` | string, must be started with `@`
-`twitterCard` | `twitter:card` | string, one of `summary` | `summary_large_image` | `app` | `player`, default is `summary`
-`alternates` | `alternate`, `og:locale:alternate` | `lang`, `path` and `default` list
-`ga` | Google Analytics' tracking code | string, must be started with `G-`
-`clarity` | Clarity's tracking code | string
-`scp` | Content Security Policy | string, default is `default-src 'self'; img-src https://*; child-src 'none';`
+| Prop          | Output                                                 | Format                                                                        |
+| ------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| `disableSEO`  | Disable SEO advices in log output                      | boolean, default is `false`                                                   |
+| `title`       | `title`, `og:title`, `twitter:title`                   | string, **required**                                                          |
+| `path`        | `canonical`, `url`, `og:url`, `twitter:url`            | string, **required**, must be started with `/`                                |
+| `type`        | `og:type`                                              | string, default is `website`                                                  |
+| `charset`     | `charset`                                              | string, default is `utf-8`                                                    |
+| `lang`        | `og:locale`                                            | string                                                                        |
+| `description` | `description`, `og:description`, `twitter:description` | string                                                                        |
+| `image`       | `image`, `og:image`, `twitter:image`                   | string                                                                        |
+| `siteName`    | `og:site_name`                                         | string                                                                        |
+| `author`      | `author`, `article:author`                             | string                                                                        |
+| `twitter`     | `twitter:site`, `twitter:creator`                      | string, must be started with `@`                                              |
+| `twitterCard` | `twitter:card`                                         | string, one of `summary`                                                      | `summary_large_image` | `app` | `player`, default is `summary` |
+| `alternates`  | `alternate`, `og:locale:alternate`                     | `lang`, `path` and `default` list                                             |
+| `ga`          | Google Analytics' tracking code                        | string, must be started with `G-`                                             |
+| `clarity`     | Clarity's tracking code                                | string                                                                        |
+| `scp`         | Content Security Policy                                | string, default is `default-src 'self'; img-src https://*; child-src 'none';` |
 
 ## Links
 

@@ -19,7 +19,7 @@
     "sharing",
     "analytics"
   ],
-  "version": "1.9.1",
+  "version": "1.10.0",
   "license": "MIT",
   "exports": "./src/index.ts",
   "homepage": "https://github.com/zfben/astro-head",
