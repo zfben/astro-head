@@ -1,21 +1,19 @@
 const exec = require('node:child_process').execSync
 const version = require('./package.json').version
 
-async function run(cmd) {
+function run(cmd) {
   console.log(cmd)
-  await exec(cmd, { stdio: 'inherit' })
+  exec(cmd, { stdio: 'inherit' })
 }
 
-async function publish() {
-  await run(
-    `npm publish --access public`
-  )
+run(`npm run build`)
 
-  await run(`git commit -am 'release ${version}'`)
+run(
+`npm publish --access public`
+)
 
-  await run(`git tag v${version}`)
+run(`git commit -am 'release ${version}'`)
 
-  await run('git push && git push --tags')
-}
+run(`git tag v${version}`)
 
-publish()
+run('git push && git push --tags')
