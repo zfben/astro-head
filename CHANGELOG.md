@@ -2,6 +2,11 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.9.0 (2024-10-20)`](https://github.com/zfben/astro-head/compare/v1.8.1...v1.9.0)
+
+- [Feature] Enhance SEO guidance in Head component with debug messages for title and description length.
+- [Fix] Update default type in alternates to support boolean values.
+
 ## [`v1.8.1 (2024-09-16)`](https://github.com/zfben/astro-head/compare/v1.7.1...v1.8.1)
 
 - [Feature] Add `default` to `alternates`.
