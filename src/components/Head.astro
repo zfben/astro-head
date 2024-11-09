@@ -90,6 +90,13 @@ export interface Props {
   scp?: string;
 
   /**
+   * [Google AdSense](https://www.google.com/adsense/) ID.
+   *
+   * Begins with `ca-pub-`.
+   */
+  adsense?: `ca-pub-${string}`;
+
+  /**
    * Disable SEO advices.
    *
    * @default false
@@ -112,6 +119,7 @@ const {
   alternates,
   ga,
   clarity,
+  adsense,
   scp,
   disableSEO,
 } = Astro.props;
@@ -140,6 +148,8 @@ if (!import.meta.env.PROD) {
   if (ga) console.debug("Google Analytics tracking code will only be generated in production mode.");
 
   if (clarity) console.debug("Clarity tracking code will only be generated in production mode.");
+
+  if (adsense) console.debug("Google AdSense code will only be generated in production mode.");
 }
 
 if (alternates?.length) {
@@ -159,6 +169,7 @@ const url = `${import.meta.env.SITE}${path}`;
 <script is:inline define:vars={{ga}}>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",ga);</script>)}
 {import.meta.env.PROD && clarity && (<script
   is:inline define:vars={{clarity}}>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",clarity);</script>)}
+{import.meta.env.PROD && adsense && (<script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense}`} crossorigin="anonymous"></script>)}
 <meta charset={charset} />
 <meta property="og:type" content={type} />
 {lang && <meta property="og:locale" content={lang} />}

@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.11.0 (2024-11-09)`](https://github.com/zfben/astro-head/compare/v1.10.2...v1.11.0)
+
+- [Feature] Add `adsense`.
+
 ## [`v1.10.2 (2024-10-20)`](https://github.com/zfben/astro-head/compare/v1.10.0...v1.10.2)
 
 - [Fix] Fix canonicalUrl when alternates include `default: true`.
