@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.12.0 (2024-12-19)`](https://github.com/zfben/astro-head/compare/v1.11.0...v1.12.0)
+
+- [Feature] `path` be optional and default to current page path.
+
 ## [`v1.11.0 (2024-11-09)`](https://github.com/zfben/astro-head/compare/v1.10.2...v1.11.0)
 
 - [Feature] Add `adsense`.
