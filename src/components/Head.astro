@@ -6,8 +6,9 @@ export interface Props {
   title: string;
   /**
    * The path of the page. Should start and end with `/`.
+   * Default uses pathname of the current page with a trailing slash.
    */
-  path: '/' | `/${string}/`;
+  path?: '/' | `/${string}/`;
 
   /**
    * The type of the content. Default is `website`.
@@ -112,7 +113,6 @@ const {
   description,
   image,
   siteName,
-  path,
   author,
   twitter,
   twitterCard = "summary",
@@ -127,7 +127,9 @@ const {
 if (!import.meta.env.SITE)
   throw Error("Please set `site` in your Astro config file.");
 
-if (!path) throw Error("Please provide a `path` prop.");
+const path = Astro.props.path ?? Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+
+if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
 if (!title) throw Error("Please provide a `title` prop.");
 
@@ -135,8 +137,6 @@ if (!disableSEO && title.length > 60) console.debug("The `title` should be less 
 
 if (!disableSEO && !description) console.debug("Provide a `description` prop for better SEO.");
 else if (!disableSEO && description && description.length < 100) console.debug("The `description` should be at least 100 characters for better SEO, learn more: https://developers.google.com/search/docs/appearance/title-link");
-
-if (!path.startsWith("/")) throw Error("`path` must start with a `/`.");
 
 if (image && !image.startsWith("http"))
   throw Error("`image` must start with `http`.");
