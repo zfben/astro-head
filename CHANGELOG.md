@@ -2,6 +2,10 @@
 
 `@zfben/astro-head` use [Semantic Versioning](https://semver.org/).
 
+## [`v1.13.0 (2025-01-06)`](https://github.com/zfben/astro-head/compare/v1.12.0...v1.13.0)
+
+- [Feature] Support [Ahrefs Web Analytics](https://ahrefs.com/web-analytics).
+
 ## [`v1.12.0 (2024-12-19)`](https://github.com/zfben/astro-head/compare/v1.11.0...v1.12.0)
 
 - [Feature] `path` be optional and default to current page path.

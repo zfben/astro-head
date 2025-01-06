@@ -67,6 +67,9 @@ test('check props', () => {
   // adsense
   ok(content.includes('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-123456789" crossorigin="anonymous"></script>'))
 
+   // ahrefs
+   ok(content.includes('<script async src="https://analytics.ahrefs.com/analytics.js" data-key="ahrefs"></script>'))
+
   // scp
   ok(content.includes(`<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">`))
 })

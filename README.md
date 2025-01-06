@@ -35,25 +35,26 @@ import { Head } from "@zfben/astro-head";
 
 ## Supported Props
 
-| Prop          | Output                                                 | Format                                                                        |
-| ------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| `disableSEO`  | Disable SEO advices in log output                      | boolean, default is `false`                                                   |
-| `title`       | `title`, `og:title`, `twitter:title`                   | string, **required**                                                          |
-| `path`        | `canonical`, `url`, `og:url`, `twitter:url`            | string, **required**, must be started with `/`                                |
-| `type`        | `og:type`                                              | string, default is `website`                                                  |
-| `charset`     | `charset`                                              | string, default is `utf-8`                                                    |
-| `lang`        | `og:locale`                                            | string                                                                        |
-| `description` | `description`, `og:description`, `twitter:description` | string                                                                        |
-| `image`       | `image`, `og:image`, `twitter:image`                   | string                                                                        |
-| `siteName`    | `og:site_name`                                         | string                                                                        |
-| `author`      | `author`, `article:author`                             | string                                                                        |
-| `twitter`     | `twitter:site`, `twitter:creator`                      | string, must be started with `@`                                              |
-| `twitterCard` | `twitter:card`                                         | string, one of `summary`                                                      | `summary_large_image` | `app` | `player`, default is `summary` |
-| `alternates`  | `alternate`, `og:locale:alternate`                     | `lang`, `path` and `default` list                                             |
-| `ga`          | Google Analytics' tracking code                        | string, must be started with `G-`                                             |
-| `clarity`     | Clarity's tracking code                                | string                                                                        |
-| `adsense`     | AdSense's tracking code                                | string                                                                        |
-| `scp`         | Content Security Policy                                | string, default is `default-src 'self'; img-src https://*; child-src 'none';` |
+| Prop          | Output                                                   | Format                                                                        |
+| ------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------- | ----- | ------------------------------ |
+| `disableSEO`  | Disable SEO advices in log output                        | boolean, default is `false`                                                   |
+| `title`       | `title`, `og:title`, `twitter:title`                     | string, **required**                                                          |
+| `path`        | `canonical`, `url`, `og:url`, `twitter:url`              | string, **required**, must be started with `/`                                |
+| `type`        | `og:type`                                                | string, default is `website`                                                  |
+| `charset`     | `charset`                                                | string, default is `utf-8`                                                    |
+| `lang`        | `og:locale`                                              | string                                                                        |
+| `description` | `description`, `og:description`, `twitter:description`   | string                                                                        |
+| `image`       | `image`, `og:image`, `twitter:image`                     | string                                                                        |
+| `siteName`    | `og:site_name`                                           | string                                                                        |
+| `author`      | `author`, `article:author`                               | string                                                                        |
+| `twitter`     | `twitter:site`, `twitter:creator`                        | string, must be started with `@`                                              |
+| `twitterCard` | `twitter:card`                                           | string, one of `summary`                                                      | `summary_large_image` | `app` | `player`, default is `summary` |
+| `alternates`  | `alternate`, `og:locale:alternate`                       | `lang`, `path` and `default` list                                             |
+| `ga`          | Google Analytics' tracking code                          | string, must be started with `G-`                                             |
+| `clarity`     | Clarity's tracking code                                  | string                                                                        |
+| `adsense`     | AdSense's tracking code                                  | string                                                                        |
+| `ahrefs`      | [Ahrefs Web Analytics](https://ahrefs.com/web-analytics) | string                                                                        |
+| `scp`         | Content Security Policy                                  | string, default is `default-src 'self'; img-src https://*; child-src 'none';` |
 
 ## Links
 
