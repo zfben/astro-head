@@ -50,9 +50,9 @@ import { Head } from "@zfben/astro-head";
 | `twitter` | `twitter:site`, `twitter:creator` | string, must be started with `@` |
 | `twitterCard` | `twitter:card` | string, one of `summary`, `summary_large_image`, `app`, `player`, default is `summary` |
 | `alternates` | `alternate`, `og:locale:alternate` | `lang`, `path` and `default` list |
-| `ga` | Google Analytics' tracking code | string, must be started with `G-` |
-| `clarity` | Clarity's tracking code | string |
-| `adsense` | AdSense's tracking code | string |
+| `ga` | [Google Analytics](https://analytics.google.com)' tracking code | string, must be started with `G-` |
+| `clarity` | [Clarity](https://clarity.microsoft.com)'s tracking code | string |
+| `adsense` | [AdSense](https://adsense.google.com)'s tracking code | string |
 | `ahrefs` | [Ahrefs Web Analytics](https://ahrefs.com/web-analytics) | string |
 | `scp` | Content Security Policy | string, default is `default-src 'self'; img-src https://*; child-src 'none';` |
 
